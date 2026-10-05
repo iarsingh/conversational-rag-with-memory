@@ -12,12 +12,18 @@ Use the architecture document for the component diagram, implementation boundari
 | Component | Responsibility |
 | --- | --- |
 | [`src/convrag/main.py`](src/convrag/main.py) | HTTP handlers: `GET /healthz`, `POST /ask` |
+| [`src/convrag/ops.py`](src/convrag/ops.py) | HTTP handlers: `GET /readyz`, `POST /workspaces`, `GET /workspaces`, `POST /workspaces/{workspace_id}/jobs`, `GET /jobs/{job_id}` |
 | [`src/convrag/memory.py`](src/convrag/memory.py) | Functions: `words`, `ask` |
 | [`requirements.txt`](requirements.txt) | Implementation or supporting configuration |
 | [`src/convrag/__init__.py`](src/convrag/__init__.py) | Implementation or supporting configuration |
+| [`Dockerfile`](Dockerfile) | Container build/service configuration |
+| [`Makefile`](Makefile) | Implementation or supporting configuration |
+| [`docker-compose.yml`](docker-compose.yml) | Container build/service configuration |
 | [`tests/test_memory.py`](tests/test_memory.py) | Executable checks and regression examples |
+| [`tests/test_ops.py`](tests/test_ops.py) | Executable checks and regression examples |
 | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | GitHub Actions job definitions |
 | [`README.md`](README.md) | Project explanations or operating notes |
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Project explanations or operating notes |
 
 ### Local setup and verification
 
