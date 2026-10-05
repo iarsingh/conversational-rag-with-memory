@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversational-rag-with-memory
+  labels:
+    app: conversational-rag-with-memory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: conversational-rag-with-memory
+  template:
+    metadata:
+      labels:
+        app: conversational-rag-with-memory
+    spec:
+      containers:
+        - name: api
+          image: conversational-rag-with-memory:local
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /v1/readyz
+              port: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: conversational-rag-with-memory
+spec:
+  selector:
+    app: conversational-rag-with-memory
+  ports:
+    - port: 80
+      targetPort: 8080
