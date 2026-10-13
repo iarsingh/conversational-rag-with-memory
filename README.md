@@ -1,5 +1,12 @@
 # Conversational RAG with Memory
 
+## Overview
+
+A small conversational RAG exercise that keeps earlier questions in a session so a follow-up can refer back to them. A second question that says `it` is understood in the context of the prior turn, and answers come from local passages through `POST /ask`. A versioned `/v1` API adds workspaces, tenant isolation, job approval and audit records.
+
+- **Built with:** Python, pytest, Docker, GitHub Actions
+- **Scope:** Local laptop lab; answers come from local passages, with no hosted model and no production changes.
+
 <!-- project-guide:start -->
 ## Project guide
 
